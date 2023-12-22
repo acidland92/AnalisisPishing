@@ -19,20 +19,20 @@ public class Pishing {
      */
     public static void main(String[] args) {
         Map<String, Integer> texto = inicializarTexto();
-        String filePatch = "";
+        String filePath = "C:/Users/Usuario/Documents/NetBeansProjects/Pishing/src/pishing/pishing.txt";
         int totalPuntos = 0;
-        
-        try(BufferedReader reader = new BufferedReader(new FileReader(filePatch))){
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
-        
-            while((line= reader.readLine()) !=null){
-                    totalPuntos += proceso(line, texto);
-        }
-            totalPuntos(totalpuntos);
-        }catch (IOException e) {
+
+            while ((line = reader.readLine()) != null) {
+                totalPuntos += proceso(line, texto);
+            }
+
+            TotalPuntos(totalPuntos);
+        } catch (IOException e) {
             e.printStackTrace();
         }
-        
     }
 
     private static Map<String, Integer> inicializarTexto() {
@@ -96,5 +96,11 @@ public class Pishing {
 
         return ocurrencias;
     }
-
+    private static void palabrasInfo(String texto, int ocurrencias, int puntos){
+        System.out.println("Palabra o frase: " + texto + ", Ocurrencias: " + ocurrencias + ", Puntos: " + puntos);
+    }
+    private static void TotalPuntos(int totalPuntos){
+        System.out.println("---------------------------------------");
+        System.out.println("Total de Puntos: " + totalPuntos);
+    }
 }
