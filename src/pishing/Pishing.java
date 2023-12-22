@@ -18,7 +18,21 @@ public class Pishing {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Map<String, Integer> texto = inicializarTexto();
+        String filePatch = "";
+        int totalPuntos = 0;
+        
+        try(BufferedReader reader = new BufferedReader(new FileReader(filePatch))){
+            String line;
+        
+            while((line= reader.readLine()) !=null){
+                    totalPuntos += proceso(line, texto);
+        }
+            totalPuntos(totalpuntos);
+        }catch (IOException e) {
+            e.printStackTrace();
+        }
+        
     }
 
     private static Map<String, Integer> inicializarTexto() {
