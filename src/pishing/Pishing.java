@@ -85,6 +85,16 @@ public class Pishing {
 
         return total;
     }
-    
+    private static int Ocurrencias(String line, String texto) {
+        int ocurrencias = 0;
+        int index = line.indexOf(texto);
+
+        while (index != -1) {
+            ocurrencias++;
+            index = line.indexOf(texto, index + 1);
+        }
+
+        return ocurrencias;
+    }
 
 }
