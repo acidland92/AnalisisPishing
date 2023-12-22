@@ -69,5 +69,22 @@ public class Pishing {
         
         return texto;
     }
+    private static int proceso(String line, Map<String, Integer> keywords) {
+        int total = 0;
+
+        for (Map.Entry<String, Integer> entry : keywords.entrySet()) {
+            String keyword = entry.getKey();
+            int puntos = entry.getValue();
+            int ocurrencias = Ocurrencias(line, keyword);
+
+            if (ocurrencias > 0) {
+                total += ocurrencias * puntos;
+                palabrasInfo(keyword, ocurrencias, ocurrencias * puntos);
+            }
+        }
+
+        return total;
+    }
+    
 
 }
